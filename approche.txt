@@ -1,0 +1,21 @@
+visiteur
+
+utilisateur
+
+administrateur
+
+
+inscription et/connection pour utilisateur et administrateur
+
+
+
+que peut faire un administrateur  ou un utilisateur
+
+
+paiement possible ou non par button 
+			par cheque
+			cagnotte
+
+mentions legales a faire en fonction du cahier des charges
+
+
