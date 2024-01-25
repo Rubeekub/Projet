@@ -1,16 +1,16 @@
 html, body {
-  margin: 20;
-  padding: 20;
+  margin: 10;
+  padding: 10;
   }
  body {
   background-color: rgb(245, 188, 178); 
   font-family: Verdana, sans-serif; 
   font-size: 100%;
-  color:rgb(27, 27, 217);
-  background-image: url(images/trouvetout.jpg);
+  color:rgb(8, 8, 9);
+  background-image: url(../images/trouvetout.jpg);
   background-attachment:fixed;
   background-repeat:no-repeat;
-  background-position:50% 50%;
+  background-position:10px 10px;
   }
   
   h1 {
@@ -23,6 +23,7 @@ html, body {
   color: rgb(199, 92, 49);
   padding-left: 15px;
   }
+  
   h3 {
 font-size:100%; 
 color: rgb(185, 94, 42); 
@@ -31,7 +32,9 @@ padding-left: 30px;
   p {
     padding:0 10px;
   }
+  .top-nav{
 
+  }
   
   .footer-basic {
     padding:40px 0;
