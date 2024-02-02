@@ -1,10 +1,8 @@
 <?php
-include 'header.php';
+include '../header.php';
+include '../nav.php';
 ?>
-</div>
-</footer>
-</body>
-</html>
+<h2>Immobilier</h2>
 <?php
-include 'footer.php';
+include '../footer.php';
 ?>
