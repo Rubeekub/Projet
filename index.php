@@ -1,6 +1,7 @@
 <?php
-include 'header.php';
-include 'nav.php';
+include 'view/header.php';
+include 'view/nav.php';
+
 ?>
 <body>
     <div>
@@ -17,13 +18,25 @@ switch ($page) {
 		break;
     case 'mentions_legales':
         include "view/mentions_legales.php";	
-         break;
+    break;
+    case 'immobilier':
+        include "view/immobilier.php";	
+    break;    
+    case 'outils':
+      include "view/outils.php";	
+    break;
+    case 'vehicules':
+      include "view/vehicules.php";	
+    break;
+    case 'vetements':
+      include "view/vetements.php";	
+    break;
     default:
 		include "view/home.php";
     }
 
 
-include 'footer.php';
+include 'view/footer.php';
 ?>
 </body>
 </html>
