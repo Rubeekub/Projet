@@ -74,7 +74,7 @@ function getUserById($id) {
 function getAvatar($id) {
     try {
         $db = connect();
-        $query=$db->prepare('SELECT path FROM avatars WHERE id_utilisateur= :id');  //placeholder id
+        $query=$db->prepare('SELECT path FROM avatars WHERE id_utilisateur = :id');  //placeholder id
         $query->execute(['id'=>$id]);
         if ($query->rowCount()){
             $avatars=$query->fetchAll(PDO::FETCH_COLUMN,0);
@@ -90,12 +90,12 @@ function getAvatar($id) {
 function addAvatar($id) {
     $cpt=0;
     foreach($_FILES['avatar']['error'] as $k=>$v){
-        if(is_uploaded_file($_FILES['avatar']['tmp_name'][$k]) && $v == UPLOAD_ERR_OK) { //$v c est pareil que $_file$_FILES['avatar']['error']["$k"], faire var_dump
+        if(is_uploaded_file($_FILES['avatar']['tmp_name'][$k]) && $v == UPLOAD_ERR_OK) { //$v c est pareil que $_FILES['avatar']['error']["$k"], faire var_dump
             $path="img/".$_FILES['avatar']['name'][$k];
             move_uploaded_file($_FILES['avatar']['tmp_name'][$k],$path);
             try{
                 $db=connect();
-                $query = $db->prepare("INSERT INTO avatars( id_utilisateur, ) VALUES (:id_utilisateur, :path)");
+                $query = $db->prepare("INSERT INTO avatars( id_utilisateur, path ) VALUES (:id_utilisateur, :path)");
                 $req= $query->execute(['id_utilisateur'=>$id,'path'=>$path]);
                 if($req) $cpt++;
             } catch (Exception $e) {
@@ -119,7 +119,7 @@ function addUser() {
                     $query->execute(['email'=> $email, 'nom'=> $nom , 'pwd'=> $pwd, 'token'=> $token]);
                     if ($query->rowCount()){
                         $nb=addAvatar($db->lastInsertId());
-                        $content="<p><a href='http://localhost/authentification/?p=activation&t=$token'>Merci de cliquer sur ce lien pour activer votre compte</a></p>";
+                        $content="<p><a href='http://localhost/Petites_annonces/?p=activation&t=$token'>Merci de cliquer sur ce lien pour activer votre compte</a></p>";
                         // Pour envoyer un mail HTML, l'en-tête Content-type doit être défini
                         $headers = array(
                             'MIME-Version' => '1.0',
@@ -181,7 +181,7 @@ function waitReset() {
             $query=$db->prepare('UPDATE utilisateurs SET token = :token, perim = :perim WHERE email = :email');
             $query->execute(['email'=> $email, 'perim'=> $perim , 'token'=> $token]);
             if ($query->rowCount()){
-                $content="<p><a href='http://localhost/authentification/?p=reset&t=$token'>Merci de cliquer sur ce lien pour réinitialiser votre mot de passe</a></p>";
+                $content="<p><a href='http://localhost/Petites_annonces/?p=reset&t=$token'>Merci de cliquer sur ce lien pour réinitialiser votre mot de passe</a></p>";
                 // Pour envoyer un mail HTML, l'en-tête Content-type doit être défini
                 $headers = array(
                     'MIME-Version' => '1.0',

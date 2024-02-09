@@ -73,7 +73,7 @@ if ($page=='activation')
         include "view/forgot.php";	
         break;	
       case 'reset':
-        $token=htmlspecialchars($_GET['t']);
+        $token=htmlspecialchars($_GET['t']);// 't' créé par le mail d activation en GET
         include "view/reset.php";	
         break;	
       case 'signup':
