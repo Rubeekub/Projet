@@ -1,0 +1,11 @@
+projet a faire le temps de la formation PHP/MySQL:
+  - en procedural, avec un cahier des charges
+  - amelioration de la BDD pour coller au cahier des charges et pourvoir evoluer
+  - base du model préparé:
+    - index.php,
+    - view (header, footer,nav, a_propos, contact, pages d annonces(immobilier, vêtements, outils, véhicules , tutos))
+    - model
+    - assets (CSS, img)
+  - mise en place de la connection sécurisée(model (function)(view (signup, reset, forgot)
+  - avatar de connexion
+  - 
