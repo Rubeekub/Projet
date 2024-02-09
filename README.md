@@ -7,5 +7,6 @@ projet a faire le temps de la formation PHP/MySQL:
     - model
     - assets (CSS, img)
   - mise en place de la connection sécurisée(model (function)(view (signup, reset, forgot)
-  - avatar de connexion
-  - 
+  - avatar(s) de connexion
+  - debut mise en place de la page 'monlongin.php'
+  -
