@@ -90,7 +90,8 @@ button:hover, .button:hover{
   border-radius: 60% / 10%;
   transform: translateY(-160px);
   transition: .8s ease-in-out;
-}  
+} 
+/
 .login label{
   transform: scale(.6);
 }
@@ -104,6 +105,7 @@ button:hover, .button:hover{
 #chk:checked ~ .signup label{
   transform: scale(.6);
 }
+
 form{
   text-align: center;
 }
@@ -162,6 +164,14 @@ a {
 a:hover {
   opacity:2;
 }
+.footer {
+  margin-top:15px;
+  text-align:center;
+  font-size:13px;
+  color:#c04949;
+  margin-bottom:0;
+}
+
 .copyright {
   margin-top:15px;
   text-align:center;

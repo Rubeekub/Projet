@@ -1,7 +1,7 @@
 
 <footer>
 
-        <div class="social">
+        <div class="footer">
             <a href="?p=index">Accueil</a>
             <a href="?p=mentions_legales">Mentions Légales</a>
             <a href="?p=a_propos">À propos</a>
