@@ -336,3 +336,4 @@ CREATE UNIQUE INDEX `id_utilisateurs_UNIQUE` ON `projet_annonces`.`avatars` (`id
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+petites_annoncesprojet_annonces
