@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once 'functions.php';
 
 if (!empty($_POST)) {
@@ -12,6 +12,7 @@ if (!empty($_POST)) {
     $code_postal= $_POST['$code_postal'] ?? '';
     $ville= $_POST['ville'] ?? '';
     $niv_administration = $_POST['niv_administration'] ?? '';
+    $avatar=$_POST['id_avatar'] ??'';
 
     
     //filter_input( ..., '...', FILTER_SANITIZE_NUMBER_INT);
@@ -20,7 +21,7 @@ if (!empty($_POST)) {
     $db = connect();
 
     // Un membre n'a un ID que si ses infos sont déjà enregistrées en BDD, donc on vérifie s'il  le membre a un ID.
-    if (empty($_POST['id'])) {
+    if (empty($_POST['id_utilisateur'])) {
          // S'il n'y a pas d'ID, le membre n'existe pas dans la BDD donc on l'ajoute.
          try {
             // Préparation de la requête d'insertion.
@@ -82,3 +83,22 @@ if (!empty($_POST)) {
 }
 
 ?>
+<div class="main">  	
+	<input type="checkbox" id="chk" aria-hidden="true">
+	<div class="signup">
+		<form method="POST" action="" enctype="multipart/form-data">
+			<label for="chk" aria-hidden="true">Enregistrement</label>
+			<input type="hidden" name="action" value="signup">
+            <input type="text" name="pseudo" placeholder="$_POST['pseudo']" required="">
+			<input type="text" name="nom" placeholder="$_POST['nom']" required="">
+            <input type="text" name="prenom" placeholder="$_POST['prenom']" required="">
+            <input type="tel" name="num_telephone" placeholder="$_POST['num_telephone']">
+			<input type="date_naissance" name="date_naissance" placeholder="$_POST['date_naissance']">
+            <input type="text" name="adresse_postale" placeholder="$_POST['adresse_postale']">
+            <input type="text" name="code_postal" placeholder="$_POST['code_postal']">
+            <input type="text" name="ville" placeholder="$_POST['ville']" required="">
+            <input type="file" name="avatar[]" accept="image/*" multiple>
+			<button>Enregistrement</button>
+		</form>
+	</div>
+</div>
