@@ -145,7 +145,7 @@ function logUser() {
             if($user['actif']){
                 $_SESSION['is_login']=true;
                 $_SESSION['is_actif']=$user['actif'];
-                $_SESSION['id']=$user['id'];
+                $_SESSION['id']=$user['id_utilisateur'];
                 return array("success", "Connexion réussie :)");               
             }else return array("error", "Veuillez activer votre compte");
         }else return array("error", "Mauvais identifiants");
