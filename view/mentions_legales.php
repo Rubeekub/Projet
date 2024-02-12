@@ -1,9 +1,10 @@
-<h2>Mentions Légales</h2>    
+<h2>Mentions Légales</h2> 
+    <div>
     <h3>Hébergement</h3>
-        Le site <a href="https://trouveTout.fr">https://trouveTout.fr</a> est hebergé par laragon, blablabl 75PN LAPONIE.<br>
+        <p>Le site <a href="https://trouveTout.fr">https://trouveTout.fr</a> est hebergé par laragon, blablabl 75PN LAPONIE.<br>
 
-        Pour contacter cet hébergeur, rendez-vous sur  <a href="https://hello.softonic.com/contact/">https://hello.softonic.com/contact </a><br>
-        </div>
+        Pour contacter cet hébergeur, rendez-vous sur  <a href="https://hello.softonic.com/contact/">https://hello.softonic.com/contact </a><br></p>
+    </div>
         <br>
         <div>
             <h3>Editeur</h3>
