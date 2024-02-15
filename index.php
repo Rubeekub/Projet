@@ -5,7 +5,7 @@ include 'view/nav.php';
 
 session_start();
 require_once "model/functions.php";
-require_once "fct_annonces.php";
+//require_once "fct_annonces.php";
 
 ?>
 <body>
@@ -31,10 +31,6 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     case 'reset':
       $message=resetPwd();
       $page="signup";
-   /* case 'annonces':
-      $message=addAnnonce();
-      $page="annonces";     
-      */
   }
 }
 
@@ -72,10 +68,7 @@ switch ($page) {
       break;
   case 'mentions_legales':
     include "view/mentions_legales.php";	
-    break;
-    case 'annonces':
-      include "view/annonces.php";	
-      break;	
+    break;	
   default:
     include "view/home.php";	
     }
