@@ -6,7 +6,7 @@
 			<input type="hidden" name="action" value="forgot">
 			<input type="email" name="email" placeholder="Email" required="">
 			<button>Renvoyer</button>
-			<a href="?p=signup">La mémoire m'est revenue</a>
+			<a href="<?=CHEMIN?>?p=signup">La mémoire m'est revenue</a>
 		</form>
 	</div>
 </div>

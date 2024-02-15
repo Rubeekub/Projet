@@ -21,7 +21,7 @@
 			<input type="email" name="email" placeholder="Email" required="">
 			<input type="password" name="pwd" placeholder="Mot de passe" required="">
 			<button>Login</button>
-			<a href="?p=forgot">Mot de passe oublié ?</a>
+			<a href="<?=CHEMIN?>?p=forgot">Mot de passe oublié ?</a>
 		</form>
 	</div>
 </div>

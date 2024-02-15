@@ -5,6 +5,7 @@ include 'view/nav.php';
 
 session_start();
 require_once "model/functions.php";
+require_once "fct_annonces.php";
 
 ?>
 <body>
