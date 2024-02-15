@@ -1,7 +1,7 @@
 <nav>
 <div class="topnav">
-  <a href="?p=index.php">Home</a>
-  <a href="?p=annonces.php">Annonces</a>
+  <a href="<?=CHEMIN?>?p=index">Home</a>
+  <a href="<?=CHEMIN?>?p=annonces">Annonces</a>
 </div>
 
 </nav>

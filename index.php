@@ -1,4 +1,5 @@
 <?php
+define("CHEMIN","http://localhost/Petites_annonces/");
 include 'view/header.php';
 include 'view/nav.php';
 
@@ -29,6 +30,10 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     case 'reset':
       $message=resetPwd();
       $page="signup";
+   /* case 'annonces':
+      $message=addAnnonce();
+      $page="annonces";     
+      */
   }
 }
 
@@ -47,10 +52,7 @@ if ($page=='activation')
     $logged = $_SESSION['is_login'] ?? false;
     
 include "view/header.php";
-switch ($page) {
-  case 'annonces':
-    include "view/annonces.php";	
-    break;   
+switch ($page) {  
   case 'forgot':
     include "view/forgot.php";	
     break;	
@@ -70,6 +72,9 @@ switch ($page) {
   case 'mentions_legales':
     include "view/mentions_legales.php";	
     break;
+    case 'annonces':
+      include "view/annonces.php";	
+      break;	
   default:
     include "view/home.php";	
     }
