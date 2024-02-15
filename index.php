@@ -5,7 +5,7 @@ include 'view/nav.php';
 
 session_start();
 require_once "model/functions.php";
-//require_once "fct_annonces.php";
+require_once "model/fct_annonces.php";
 
 ?>
 <body>
@@ -31,6 +31,9 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     case 'reset':
       $message=resetPwd();
       $page="signup";
+      case 'addAnnonce':
+        $message=addAnnonce();
+        break;
   }
 }
 
@@ -63,8 +66,11 @@ switch ($page) {
   case 'a_propos':
     include "view/a_propos.php";	
     break;
-    case 'contact':
-      include "view/contact.php";	
+  case 'contact':
+    include "view/contact.php";	
+    break;
+  case 'annonces':
+      include "view/annonces.php";	
       break;
   case 'mentions_legales':
     include "view/mentions_legales.php";	
@@ -72,6 +78,8 @@ switch ($page) {
   default:
     include "view/home.php";	
     }
+
+    // recerche de l erreur
 
 include "view/footer.php";
 
