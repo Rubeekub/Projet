@@ -48,18 +48,9 @@ if ($page=='activation')
     
 include "view/header.php";
 switch ($page) {
-  case 'immobilier':
-    include "view/immobilier.php";	
+  case 'annonces':
+    include "view/annonces.php";	
     break;   
-  case 'outils':
-    include "view/outils.php";	
-    break;
-  case 'vehicules':
-    include "view/vehicules.php";	
-    break;
-  case 'vetements':
-    include "view/vetements.php";	
-    break;
   case 'forgot':
     include "view/forgot.php";	
     break;	
@@ -72,10 +63,10 @@ switch ($page) {
     break;
   case 'a_propos':
     include "view/a_propos.php";	
-    break;	
-  case 'contact':
-    include "view/contact.php";	
     break;
+    case 'contact':
+      include "view/contact.php";	
+      break;
   case 'mentions_legales':
     include "view/mentions_legales.php";	
     break;
