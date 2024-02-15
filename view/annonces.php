@@ -1,5 +1,9 @@
 <h2>Annonces</h2>
- 
+ <!-- faire le formulaire, 
+		traiter les donnees
+		filtrer les données
+		renvoyer a la BDD
+-->
 <div >
 	<form method="POST" action="" enctype="multipart/form-data">
 		<label for="titre" >Titre de l'annonce</label>
