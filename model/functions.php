@@ -20,6 +20,8 @@ function connect() {
     } catch (Exception $e){
       echo $e->getMessage();
     }
+$db= NULL;
+$query=NULL;
 }
 
 // Récupération d'un utilisateur à partir de son email
@@ -36,6 +38,8 @@ function getUserByEmail($email) {
         echo $e->getMessage();
     } 
     return false;
+$db= NULL;
+$query=NULL;
 }   
 
 // Récupération d'un utilisateur à partir d'un token
@@ -52,6 +56,8 @@ function getUserByToken($token) {
         echo $e->getMessage();
     } 
     return false;
+$db= NULL;
+$query=NULL;    
 }   
 
 // Récupération d'un utilisateur à partir d'un id
@@ -68,6 +74,8 @@ function getUserById($id) {
         echo $e->getMessage();
     } 
     return false;
+$db= NULL;
+$query=NULL;
 }
 
 // récupére le chemin de l'avatar
@@ -84,6 +92,8 @@ function getAvatar($id) {
         echo $e->getMessage();
     } 
     return false;
+$db= NULL;
+$query=NULL;
 }
 
 // enregistre les chemins des avatars
@@ -104,7 +114,10 @@ function addAvatar($id) {
         }else echo 'erreur fichier'; // erreur du longeur de nom de fichier modifiée en passant de 50 a 250 varchar dans la BDD
     }
     return $cpt;
+$db= NULL;
+$query=NULL;
 }
+
 function addUser() {
     $email=filter_var(filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL), FILTER_VALIDATE_EMAIL);
     if(!getUserByEmail($email)){
@@ -135,6 +148,8 @@ function addUser() {
             }else array("error", "Le mot de passe doit comporter au moins 8 caractères dont au moins 1 chiffre, 1 minuscule, 1 majuscule et 1 caractère spécial");
         }else array("error", "Les 2 saisies de mot de passes doivent être identique.");
     }else array("error", "Un compte existe déjà pour cet email.");
+$db= NULL;
+$query=NULL;
 }
 
 function logUser() {
@@ -169,6 +184,8 @@ function activUser() {
             }              
         }else return array("error", "Ce compte est déjà actif");
     }else return array("error", "Lien invalide !");
+$db= NULL;
+$query=NULL;
 }
 
 function waitReset() {
@@ -195,6 +212,8 @@ function waitReset() {
             return array("error",  $e->getMessage());
         }
     }else array("error", "Aucun compte ne correspond à cet email.");
+$db= NULL;
+$query=NULL;
 }
 
 function resetPwd() {
@@ -225,4 +244,6 @@ function resetPwd() {
             }else array("error", "Le mot de passe doit comporter au moins 8 caractères dont au moins 1 chiffre, 1 minuscule, 1 majuscule et 1 caractère spécial");
         }else array("error", "Les 2 saisies de mot de passe doivent être identiques.");
     }else return array("error", "Les données ont été corrompues ! Veuillez <a href='?p=forgot'>recommencer</a>");
+     $query = null;
+     $db = null;
 }
