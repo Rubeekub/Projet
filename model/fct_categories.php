@@ -2,7 +2,7 @@
 function getAllCategories() {
     try {
         $db = connect();
-        //pas besoin de prepare car ce n est qu un select
+        //pas besoin de prepare car je n ai pas de paramettre donné par l utilisateur
         $query=$db->query('SELECT nom_categorie FROM categories');
         
             return $query->fetchAll(PDO::FETCH_ASSOC);
