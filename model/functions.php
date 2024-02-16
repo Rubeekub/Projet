@@ -141,13 +141,13 @@ function addUser() {
                         );
                         mail($email,"Veuillez activer votre compte", $content, $headers);
                         return array("success", "Inscription réussi. Vous avez déjà $nb avatars. Vous allez recevoir un mail pour activer votre compte");
-                    }else array("error", "Problème lors de enregistrement");
+                    }else return array("error", "Problème lors de enregistrement");
                 } catch (Exception $e) {
                     return array("error",  $e->getMessage());
                 } 
-            }else array("error", "Le mot de passe doit comporter au moins 8 caractères dont au moins 1 chiffre, 1 minuscule, 1 majuscule et 1 caractère spécial");
-        }else array("error", "Les 2 saisies de mot de passes doivent être identique.");
-    }else array("error", "Un compte existe déjà pour cet email.");
+            }else return array("error", "Le mot de passe doit comporter au moins 8 caractères dont au moins 1 chiffre, 1 minuscule, 1 majuscule et 1 caractère spécial");
+        }else return array("error", "Les 2 saisies de mot de passes doivent être identique.");
+    }else return array("error", "Un compte existe déjà pour cet email.");
 $db= NULL;
 $query=NULL;
 }

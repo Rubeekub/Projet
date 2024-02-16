@@ -14,7 +14,7 @@
 		<label for="ville" >Lieux</label>
 		<input type="text" name="ville" placeholder="Titre de l'annonce" required <?= isset($annonces['ville']) ? htmlentities($annonces['ville'])  : '' ?>'>
 		<label for="prix_vente" >Prix</label>
-		<input type="number" name="prix_vente" placeholder="prix" required <?= isset($annonces['prix_vente']) ? htmlentities($annonces['prix_vente'])  : '' ?>'>
+		<input type="number" name="prix_vente" min=0 placeholder="prix" required <?= isset($annonces['prix_vente']) ? htmlentities($annonces['prix_vente'])  : '' ?>'>
 <!--		<label for="photo_default" >Photo de l'annonce</label>
 		<input type="file" name="photo_default" accept="image/*">
 		<label for="photo_add" >Photos supplémentaire de l'annonce</label>

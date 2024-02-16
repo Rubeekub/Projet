@@ -4,8 +4,8 @@
 		<form method="POST" action="" enctype="multipart/form-data">
 			<label for="chk" aria-hidden="true">Enregistrement</label>
 			<input type="hidden" name="action" value="signup">
-			<input type="text" name="nom" placeholder="Nom" required="">
-			<input type="email" name="email" placeholder="Email" required="">
+			<input type="text" name="nom" placeholder="Nom" required=""<?= isset($utilisateurs['nom']) ? htmlentities($utilisateurs['nom'])  : '' ?>'>
+			<input type="email" name="email" placeholder="Email" required=""<?= isset($utilisateurs['email']) ? htmlentities($utilisateurs['email'])  : '' ?>'>
 			<input type="password" name="pwd" placeholder="Mot de passe" required="" pattern="^(?=.*\d)(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,}$" title="Le mot de passe doit comporter au moins 8 caractères dont au moins 1 chiffre, 1 minuscule, 1 majuscule et 1 caractères spécial">
 			<input type="password" name="pwd2" placeholder="Confirmation du mot de passe" required="">
 			<input type="file" name="avatar[]" accept="image/*" multiple>
