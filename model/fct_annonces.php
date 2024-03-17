@@ -26,4 +26,25 @@ function addAnnonce() {
 $db= NULL;
 $query= NULL;        
 }
+// enregistre les chemins des photos
+function addPhotos($id) {
+    $cpt=0;
+    foreach($_FILES['photo']['error'] as $k=>$v){
+        if(is_uploaded_file($_FILES['photo']['tmp_name'][$k]) && $v == UPLOAD_ERR_OK) { //faire var_dump si besoin
+            $path="img/".$_FILES['photo']['name'][$k];
+            move_uploaded_file($_FILES['photo']['tmp_name'][$k],$path);
+            try{
+                $db=connect();
+                $query = $db->prepare("INSERT INTO photo( id_annonce, path ) VALUES (:id_annonce, :path)");
+                $req= $query->execute(['id_annonce'=>$id,'path'=>$path]);
+                if($req) $cpt++;
+            } catch (Exception $e) {
+                echo $e->getMessage();
+            }
+        }else echo 'erreur fichier'; // erreur du longeur de nom de fichier modifiée en passant de 50 a 250 varchar dans la BDD
+    }
+    return $cpt;
+$db= NULL;
+$query=NULL;
+}
 ?>
