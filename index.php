@@ -1,5 +1,5 @@
 <?php
-define("CHEMIN","http://localhost/Petites_annonces/");
+define("URL","http://localhost/Petites_annonces/");
 include 'view/header.php';
 include 'view/nav.php';
 
